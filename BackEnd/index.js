@@ -5,7 +5,7 @@ import bodyParser from "body-parser";
 
 import uploadRoute from "./Routes/RestoreImageRoute.js";
 
-dotenv.config();
+dotenv.config({ path: "./config.env" });
 const app = express();
 
 app.use(express.json());
