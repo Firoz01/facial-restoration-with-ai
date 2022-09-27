@@ -21,12 +21,9 @@ router.post("/", upload.single("image"), async (req, res) => {
     const restoreImageOutput = await gfpgan.predict({
       img: cloudinaryImageUrl,
     });
-    res
-      .status(200)
-      .json({
-        cloudinaryImageUrl: cloudinaryImageUrl,
-        restoreImageOutput: restoreImageOutput,
-      });
+    res.status(200).json({
+      restoreImageOutput: restoreImageOutput,
+    });
   } catch (error) {
     console.log(error);
   }
